@@ -60,7 +60,7 @@ maven:
     <version>3.2.1</version>
     <configuration>
         <url>jdbc:postgresql://localhost:5432/database</url>
-        <!-- Here you put your callbacks, in order -->
+        <!-- Place your callbacks here, in the prefered execution order -->
         <callbacks>
             <callback>test.AuditCallback</callback>
         </callbacks>
