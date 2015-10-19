@@ -470,3 +470,7 @@ div.sidebar section img.icon {
   color: #828282;
 }
 
+
+.nt, .kn, .o {
+  color: #EF6094 !important;
+}
