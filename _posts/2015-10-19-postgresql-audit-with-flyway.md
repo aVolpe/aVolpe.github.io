@@ -144,8 +144,19 @@ Updating audit info
 [INFO] ------------------------------------------------------------------------
 {% endhighlight %}
 
-You can get the full example in [this gist][gist-link].
+The table `logged_actions` looks like:
 
+{% gist avolpe/f12566b5ec7266144354 result.md %}
+
+_Note that some columns are removed to fit this page._
+
+
+## Final code ##
+
+You can get the full example in [this gist][gist-link], this gist include the
+trigger that audit, with the modification recommended in
+[here][postgresql-audit] to save the audit data as JSON, the full callback, and
+the string manipulation to execute the `CREATE TRIGGER` sentence.
 
 [postgresql-audit]:  http://wiki.postgresql.org/wiki/Audit_trigger
 [flyway]:            http://flywaydb.org/
