@@ -86,14 +86,15 @@ get all the database tables, for example, this query obtains all tables:
 {% highlight sql %}
 
 SELECT table_schema || '.' || table_name AS table
-FROM information_schema.tables 
+FROM information_schema.tables
 WHERE table_schema NOT IN ('pg_catalog', 'information_schema');
 
 {% endhighlight %}
 
-We can remove from this list some tables, for example the table `public.schema_version`
-is used for flyway to manage the versions, also your audit table must not be
-audited.
+We can remove some tables from this list, for example the
+`public.schema_version` and `audit.logged_actions` tables. The first is used by
+flyway to manage the versions and the second is used to store the proper audit
+records.
 
 Finally, we need to add the trigger, since this callback is executed many
 times, the trigger must be added only if it doesn't exists already. To
@@ -113,18 +114,18 @@ trigger query, if you run `mvn clean flyway:migrate`, you must see:
 
 {% highlight bash %}
 [INFO] Scanning for projects...
-[INFO]                                                                         
+[INFO]
 [INFO] ------------------------------------------------------------------------
 [INFO] Building project 1.0-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
-[INFO] 
+[INFO]
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ project ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] Copying 9 resources
-[INFO] 
+[INFO]
 [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ project ---
 [INFO] Nothing to compile - all classes are up to date
-[INFO] 
+[INFO]
 [INFO] --- flyway-maven-plugin:3.2.1:migrate (default-cli) @ project ---
 [INFO] Flyway 3.2.1 by Boxfuse
 [INFO] Database: jdbc:postgresql://localhost:5432/newproject (PostgreSQL 9.3)
