@@ -8,7 +8,7 @@ tags:        flyway postgresql maven
 ---
 
 Postgresql has a feature that allows you to listen to all changes in a table and
-audit them, this feature is describen in the [Audit Trigger
+audit them, this feature is described in the [Audit Trigger
 page][postgresql-audit].
 
 If you use [Flyway][flyway] to handle your database migrations it can be tedious
