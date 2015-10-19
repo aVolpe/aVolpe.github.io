@@ -7,11 +7,11 @@ comments:    true
 ---
 
 Postgresql has a feature that allows you to listen to all changes in a table and
-audit then, this feature is describen in the [Audit Trigger
+audit them, this feature is describen in the [Audit Trigger
 page][postgresql-audit].
 
 If you use [Flyway][flyway] to handle your database migrations it can be tedious
-to update your triggers every change. Thankfully, flyway has
+to update your triggers at every change. Thankfully, flyway has
 [callbacks][flyway-callbacks], with this callbacks you can execute arbitrarily
 java code in various phases, a particular useful callback is the `afterMigrate`,
 this callback is execute after every migration.
