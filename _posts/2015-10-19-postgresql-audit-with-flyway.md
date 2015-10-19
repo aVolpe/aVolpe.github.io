@@ -13,9 +13,9 @@ page][postgresql-audit].
 
 If you use [Flyway][flyway] to handle your database migrations it can be tedious
 to update your triggers at every change. Thankfully, flyway has
-[callbacks][flyway-callbacks], with this callbacks you can execute arbitrarily
+[callbacks][flyway-callbacks], with these callbacks you can arbitrarily execute
 java code in various phases, a particular useful callback is the `afterMigrate`,
-this callback is execute after every migration.
+this callback is executed after every migration.
 
 ## Configuration ##
 
