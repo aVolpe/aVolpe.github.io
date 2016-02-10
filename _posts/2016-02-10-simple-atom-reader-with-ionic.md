@@ -20,7 +20,7 @@ properties:
 
 {% highlight javascript %}
 var parser = new DOMParser();
-var xml = parser.parseFromString(data.data, 'text/xml');
+var xml = parser.parseFromString(xmlString, 'text/xml');
 
 var entryData = xml.getElementsByTagName('entry');
 var posts = [];
@@ -69,10 +69,11 @@ This example, produces a Json like this:
 
 ## About CORSS problems
 
-When you use a external Atom XML file (for example, a Atom file from a wordpress
-blog), you will get a [CORS]  exception (that means, the file author don't allow
-third party *webpages* access their content). In a real device you don't have
-this problem, because you are not a `webpage`.
+If you debug with a browser instead of a real device (or emulator), and you use
+a external Atom XML file (for example, a Atom file from a wordpress blog), you
+will get a [CORS]  exception (that means, the file author don't allow third
+party *webpages* access their content) when you try to get the file. In a real
+device you don't have this problem, because you are not a `webpage`.
 
 To fix this issue, you need to create a `Ionic Proxy`, to achieve this, add
 something like this in your `ionic.project` file:
