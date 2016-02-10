@@ -474,3 +474,8 @@ div.sidebar section img.icon {
 .nt, .kn, .o {
   color: #EF6094 !important;
 }
+
+.center-image {
+     margin: 0 auto;
+     display: block;
+}
