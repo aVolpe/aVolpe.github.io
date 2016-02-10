@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Simple Atom reader with Ionic"
-description: "Simple example of a rss feed reader with Ionic"
+description: "Simple example of a Atom feed reader with Ionic"
 category: "ionic"
 tags: [ "ionic", "rss" ]
 ---

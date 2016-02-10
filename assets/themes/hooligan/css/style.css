@@ -479,3 +479,12 @@ div.sidebar section img.icon {
      margin: 0 auto;
      display: block;
 }
+
+.posts h2 {
+    margin-bottom: 0px;
+}
+
+.posts .description {
+     text-color: gray;
+    margin-bottom: 10px;
+}
