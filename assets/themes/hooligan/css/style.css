@@ -488,3 +488,9 @@ div.sidebar section img.icon {
      text-color: gray;
     margin-bottom: 10px;
 }
+
+.gist-file {
+   text-shadow: none !important;
+   -webkit-filter: invert(100%);
+   filter: invert(100%);
+}
