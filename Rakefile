@@ -304,3 +304,9 @@ end
 
 #Load custom rake scripts
 Dir['_rake/*.rake'].each { |r| load r }
+
+namespace :assets do
+  task :precompile do
+    puts `bundle exec jekyll build`
+  end
+end

@@ -105,7 +105,6 @@ This is my final Dockerfile:
 
 The final files can be found in [this gists](gist).
 
-
 [basic-auth]: https://en.wikipedia.org/wiki/Basic_access_authentication
 [gist]: http://127.0.0.1:4000/develop/2016/04/11/pgfouine-with-postgresql-94-in-docker
 [docker-image]: https://hub.docker.com/_/postgres/
