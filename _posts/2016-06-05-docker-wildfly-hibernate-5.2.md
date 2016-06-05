@@ -2,7 +2,7 @@
 layout: post
 title: "Using Hibernate 5.2 with Wilfly 10 in Docker"
 description: "Using the recently released Hibernate 5.2 with Wildfly 10 in a Docker container"
-category: "open-data"
+category: docker
 tags: javaee docker hibernate wildfly
 ---
 {% include JB/setup %}
