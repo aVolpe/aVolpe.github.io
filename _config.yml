@@ -19,11 +19,11 @@ highlighter: rouge
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : Test Blog
+title : aVolpe blog
 tagline: Arturo Volpe blog
 description : Blog about development with Java EE and other technologies.
 author :
-  name : Test blog
+  name : aVolpe blog
   email : arturovolpe@gmail.com
   github : avolpe
   twitter : cochovolpe
