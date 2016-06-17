@@ -25,9 +25,9 @@ i will use hibernate spatial 5.0.7, jts 1.13, and geolatte 1.0.1.
 
 You can get the jars from:
 
-* Hibernate Spatial: http://central.maven.org/maven2/org/hibernate/hibernate-spatial/5.0.7.Final/hibernate-spatial-5.0.7.Final.jar
-* JTS: http://central.maven.org/maven2/com/vividsolutions/jts/1.13/jts-1.13.jar
-* GeoLatte: http://central.maven.org/maven2/org/geolatte/geolatte-geom/1.0.1/geolatte-geom-1.0.1.jar
+* [Hibernate Spatial](http://central.maven.org/maven2/org/hibernate/hibernate-spatial/5.0.7.Final/hibernate-spatial-5.0.7.Final.jar)
+* [JTS](http://central.maven.org/maven2/com/vividsolutions/jts/1.13/jts-1.13.jar)
+* [GeoLatte](http://central.maven.org/maven2/org/geolatte/geolatte-geom/1.0.1/geolatte-geom-1.0.1.jar)
 
 If you are using another version of hibernate, you need to check the hibernate
 pom and use the correct versions.
