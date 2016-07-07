@@ -21,7 +21,7 @@ depends on [GeoLatte][geolatte] and [VididSolutions JTS][jts]. Also, geolatte
 depends on slf4j.
 
 To add this dependencies, we need to downloads the desired jars, for this guide,
-i will use hibernate spatial 5.0.7, jts 1.13, and geolatte 1.0.1.
+I will use Hibernate Spatial 5.0.7, JTS 1.13, and Geolatte 1.0.1, as Wildfly 10.0.0.Final currently ships with Hibernate 5.0.7, and JTS 1.13 and Geolatte 1.0.1 are transitive dependencies for Hibernate Spatial 5.0.7.
 
 You can get the jars from:
 
@@ -29,8 +29,16 @@ You can get the jars from:
 * [JTS](http://central.maven.org/maven2/com/vividsolutions/jts/1.13/jts-1.13.jar)
 * [GeoLatte](http://central.maven.org/maven2/org/geolatte/geolatte-geom/1.0.1/geolatte-geom-1.0.1.jar)
 
-If you are using another version of hibernate, you need to check the hibernate
-pom and use the correct versions.
+You can also download the dependencies directly through the Maven CLI:
+
+```sh
+mvn dependency:copy -Dartifact=org.hibernate:hibernate-spatial:5.0.7.Final:jar -DoutputDirectory=.
+mvn dependency:copy -Dartifact=org.geolatte:geolatte-geom:1.0.1:jar -DoutputDirectory=.
+mvn dependency:copy -Dartifact=com.vividsolutions:jts:1.13:jar -DoutputDirectory=.
+```
+
+If you are using another version of Hibernate, you need to check the Hibernate
+`pom.xml` and use the correct versions.
 
 # Installation
 
