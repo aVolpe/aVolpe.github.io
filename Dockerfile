@@ -37,5 +37,5 @@ RUN chown -R app:app /home/app/webapp
 
 # Build the app with Jekyll
 WORKDIR /home/app/webapp
-RUN /usr/local/rvm/gems/ruby-2.2.5/wrappers/jekyll build
+RUN bundle exec jekyll build
 
