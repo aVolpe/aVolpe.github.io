@@ -5,8 +5,6 @@ description: "Plot from data extracted from https://www.bcp.gov.py/webapps/web/c
 category: "open-data"
 tags: open-data visualization
 ---
-{% include JB/setup %}
-
 The Central Bank of Paraguay publish the most relevant currency quotes every
 month in their [Cotización Referencia Mensual][central-bank] page.
 

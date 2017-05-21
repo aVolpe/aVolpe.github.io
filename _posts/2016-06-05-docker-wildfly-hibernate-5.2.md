@@ -5,7 +5,6 @@ description: "Using the recently released Hibernate 5.2 with Wildfly 10 in a Doc
 category: docker
 tags: javaee docker hibernate wildfly
 ---
-{% include JB/setup %}
 
 The 1st of June [Hibernate 5.2][hibernate-release] was released, this release
 has some interesting features, like the consolidation of JPA in the core, and

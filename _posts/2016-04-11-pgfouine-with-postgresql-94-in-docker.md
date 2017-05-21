@@ -5,8 +5,6 @@ description: "Simple pgFouine configuration for a dockerized postgresql"
 category: develop
 tags: [ postgresql, pgFouine, docker ]
 ---
-{% include JB/setup %}
-
 [pgFouine](pgfouine) is a log analyzer for PostgreSQL, it uses the postgreSQL
 log to create charts and statistics about the usage of a database, provides a
 useful visualization of the most expensive, common and heavy queries.

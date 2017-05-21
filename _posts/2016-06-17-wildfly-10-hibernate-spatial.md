@@ -5,7 +5,6 @@ description: "How to configure Wildfly 9 or 10 to use a datasource with hibernat
 category: hibernate
 tags: javaee hibernate wildfly
 ---
-{% include JB/setup %}
 
 [Hibernate Spatial][hibernate-spatial] is a project that allows hiberante (and
 JPA) to use Spatial facilities provided by database vendor's (like
