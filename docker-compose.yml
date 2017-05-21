@@ -1,0 +1,13 @@
+version: '2'
+services:
+  blog:
+    build: .
+    ports:
+      - "80:80"
+    container_name: avolpeblog
+    restart: unless-stopped
+    environment:
+      - VIRTUAL_HOST=www.volpe.com.py,blog.volpe.com.py
+      - LETSENCRYPT_HOST=www.volpe.com.py,blog.volpe.com.py
+      - LETSENCRYPT_EMAIL=arturovolpe@gmail.com
+
