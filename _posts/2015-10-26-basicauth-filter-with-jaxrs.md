@@ -57,6 +57,7 @@ handled for our methods annotated with `@Path`, also we need to extends from
 
 {% highlight java %}
 @Provider
+@Priority(Priorities.AUTHENTICATION)
 @PreMatching
 public class SecurityFilter implements ContainerRequestFilter {
 
