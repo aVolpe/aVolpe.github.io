@@ -29,7 +29,7 @@ WORKDIR /tmp
 COPY Gemfile /tmp/
 COPY Gemfile.lock /tmp/
 RUN bundle install
-RUN gem install jekyll --no-rdoc --no-ri
+RUN gem install jekyll --no-rdoc --no-ri -v 3.3.1
 
 # Add the Passenger app
 COPY . /home/app/webapp
