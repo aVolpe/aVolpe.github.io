@@ -1,0 +1,14 @@
+{
+    "name": "AV",
+    "short_name": "AV",
+    "icons": [
+        {
+            "src": "/static/favicon/android-chrome-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
