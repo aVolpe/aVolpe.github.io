@@ -3,8 +3,9 @@ layout: post
 title: "Simple Atom reader with Ionic"
 description: "Simple example of a Atom feed reader with Ionic"
 category: "ionic"
-tags: [ "ionic", "rss" ]
+tags: ["ionic", "rss"]
 ---
+
 [Atom][atom-wiki] is a simple web feed format that handle the post data in XML,
 various CMS, and static site generators use it to allow third party software
 (like [feedly][Feedly]) to notify it's users when the site add more content.
