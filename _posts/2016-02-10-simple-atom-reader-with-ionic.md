@@ -91,7 +91,7 @@ proxies here][ionic-proxy]
 If you use the previous code with a Ionic List, you can achieve a nice looking
 view of your rss, something like this:
 
-![Screenshot]({{ site.url }}/assets/ionic_atom.jpg){: .center-image}
+![Screenshot]({{ site.url }}/static/img/ionic_atom.jpg){: .center-image}
 
 With this html:
 
