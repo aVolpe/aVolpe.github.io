@@ -6,10 +6,11 @@ services:
   - docker
 
 script:
-  - docker build -t avolpe/blog .
+  - docker build -t avolpe/blog:latest .
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push avolpe/blog;
+    docker push avolpe/blog:latest;
+    curl "$HOOK_URL";
     fi

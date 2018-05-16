@@ -33,6 +33,12 @@ share:
   fb_appid: 1263967477049232
 
 urls:
+    - text: Home
+      url: /
+    - text: Resume
+      url: /cv
+    - text: Projects
+      url: /projects/
     - text: About Me
       url: /about/
     - text: XML Feed

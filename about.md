@@ -4,7 +4,9 @@ title: About
 permalink: /about/
 ---
 
-I am a Sofware enginner working at <a htref="http://www.cds.com.py">CDS</a>
+I am a Software engineer, currently looking for job.
+
+My interests are the current trends in continuos integration and delivery.
 
 <h3>Contact</h3>
 

@@ -57,6 +57,13 @@ layout: default
             {% endif %}
             <span class="project-timeline">{{ i.date }}</span>
           </div>
+          <div class="project-footer">
+            {% if i.repo %}
+              <a href="{{ i.repo }}" class="project-link" target="_blank">
+                <i class="fa fa-github"></i> Repo
+              </a>
+            {% endif %}
+          </div>
         </div>
         <hr>
       </div>
