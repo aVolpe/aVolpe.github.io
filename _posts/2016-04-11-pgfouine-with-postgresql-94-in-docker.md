@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "pgFouine with postgreSQL 9.4 in Docker"
 description: "Simple pgFouine configuration for a dockerized postgresql"
 category: develop

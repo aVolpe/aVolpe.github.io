@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "Using Hibernate Spatial with Wildfly 9/10"
 description: "How to configure Wildfly 9 or 10 to use a datasource with hibernate spatial types"
 category: hibernate

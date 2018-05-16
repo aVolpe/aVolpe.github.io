@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "BasicAuth filter with JaxRS"
 description: "Simple authorization with jaxrs"
 category: develop

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "Currency evolution in Paraguay"
 description: "Plot from data extracted from https://www.bcp.gov.py/webapps/web/cotizacion/monedas-mensual"
 category: "open-data"

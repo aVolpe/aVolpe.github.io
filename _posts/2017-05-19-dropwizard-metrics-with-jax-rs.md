@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "Dropwizard Metrics with JaxRS"
 description: "How to integrate the metrics library to a Standar Java EE 8
 application"

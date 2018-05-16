@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "Using Hibernate 5.2 with Wilfly 10 in Docker"
 description: "Using the recently released Hibernate 5.2 with Wildfly 10 in a Docker container"
 category: docker

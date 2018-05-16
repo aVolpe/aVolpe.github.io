@@ -1,10 +1,13 @@
 ---
-layout: post
+layout: posts
+classes:
+    - dark-theme
 title: "Metric collection using ionic and fabric"
 description: "How to collect info about your hybrid app "
 category: ionic
 comments: true
 tags: ['ionic', 'fabric', 'typescript']
+author_profile: true
 ---
 
 

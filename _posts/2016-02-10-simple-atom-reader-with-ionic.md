@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: "Simple Atom reader with Ionic"
 description: "Simple example of a Atom feed reader with Ionic"
 category: "ionic"

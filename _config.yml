@@ -1,20 +1,56 @@
 title: aVolpe Blog
-description: Blog about Java EE and related technologies
+locale: 'en-US'
+description: Blog about Java, docker, CI, CD and related technologies
 author: Arturo Volpe
+name: Arturo Volpe
 github: https://github.com/avolpe
 about: I am a software enginner.
 disqus_shortname: avolpeblog
 google_analytics: UA-84291651-1
 avatar_url: /static/img/avatar.jpg
 encoding: utf-8
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+repository: "avolpe/aVolpe.github.io"
+search: true
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      read_time: true
+      comments: true
+
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "avolpeblog"
+
+
 
 enableTags: true
 tagarray: []
+
 
 collections:
   project:
     output: true
     permalink: /project/:path/
+
+twitter:
+  username: "cochoVolpe"
+facebook:
+  app_id:  1263967477049232
+
+uthor:
+  name   : "Arturo Volpe"
+  avatar : "./static/img/avatar.jpg"
+  bio    : "Software Enginner. LFJ"
+  email  : "arturovolpe@gmail.com"
+  uri    : "https://www.volpe.com.py"
+
 
 social:
     - icon: fa-twitter

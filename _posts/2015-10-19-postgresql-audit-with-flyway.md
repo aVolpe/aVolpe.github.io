@@ -1,5 +1,5 @@
 ---
-layout:      post
+layout:      posts
 title:       "Database audit with postgresql and flyway"
 description: "Simple example of an automatic callback that create triggers to audit all tables in a database."
 date:        2015-10-19 10:27
