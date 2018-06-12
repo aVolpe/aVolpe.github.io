@@ -1,7 +1,7 @@
 /* Project Elements */
 .project-outer {
   display: inline-block;
-  width: 30%;
+  width: 40%;
   vertical-align: top;
   margin: 0 10px;
 }
@@ -77,4 +77,28 @@ a.project-detail:hover {
 }
 a.project-detail:hover h3 {
   color: #62A253;
+}
+
+@media only screen and (max-width: 700px) {
+  .projects {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: auto;
+  }
+
+  .project-item {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  .project-img {
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .project-detail  {
+    text-align: center
+
+  }
 }
