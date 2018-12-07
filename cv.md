@@ -4,4 +4,4 @@ title: Resume
 permalink: /cv/
 ---
 
-<iframe src="https://cdn.rawgit.com/aVolpe/cv/master/cv.pdf" width="130%" height="100%" style="height:100vh"></iframe>
+<iframe src="https://cdn.jsdelivr.net/gh/aVolpe/cv/cv.pdf" width="130%" height="100%" style="height:100vh"></iframe>
