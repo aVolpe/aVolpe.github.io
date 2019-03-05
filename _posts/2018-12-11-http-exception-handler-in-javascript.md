@@ -8,8 +8,8 @@ tags: ["javascript", "http"]
 
 Modern javascript http clients use promises or somethings similar (for this
 post, angular Observables are similar enough, so this post also is relevant to
-angular), and a common issue with this approach is that we something want to add
-a default message to the user when something fail.
+angular), and a common issue with this approach is that sometimes we want to
+show a default message to the user when something went wrong
 
 I am using [the fetch standard API][fetch] in this blog, but the same can be
 achieve with similar libraries like the browser [axios][Axios] or the default
