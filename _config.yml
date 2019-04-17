@@ -36,6 +36,8 @@ urls:
     - text: Home
       url: /
     - text: Resume
+      url: /resume.html
+    - text: Resume (Spanish)
       url: /cv
     - text: Projects
       url: /projects/
