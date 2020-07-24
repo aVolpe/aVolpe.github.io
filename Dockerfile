@@ -3,7 +3,7 @@
 # habd.as Dockerfile
 # Runs Jekyll under Nginx with Passenger
 
-FROM phusion/passenger-ruby22:0.9.19
+FROM phusion/passenger-ruby27:1.0.10
 MAINTAINER Arturo Volpe "arturovolpe@gmail.com"
 
 # Set environment variables
@@ -34,7 +34,7 @@ WORKDIR /tmp
 COPY Gemfile /tmp/
 COPY Gemfile.lock /tmp/
 RUN bundle install
-RUN gem install jekyll --no-rdoc --no-ri -v 3.3.1
+#RUN gem install jekyll --no-rdoc --no-ri -v 4.1.1
 
 # Add the Passenger app
 COPY . /home/app/webapp
