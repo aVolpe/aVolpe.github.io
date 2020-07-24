@@ -15,7 +15,7 @@ on:
     branches: [ master ]
 
 env:
-  IMAGE_NAME: aVolpe.github.io
+  IMAGE_NAME: blog
 
 jobs:
 
@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build image
-        run: docker build . --file Dockerfile --tag blog
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Log into registry
         if: github.event_name == 'push'
@@ -49,9 +49,9 @@ jobs:
           [ "$VERSION" == "master" ] && VERSION=latest
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
-          docker tag blog $IMAGE_ID:$VERSION
+          docker $IMAGE_NAME blog $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
 
-      - name: Redeploy
-        if: github.event_name == 'push'
-        run: curl "$HOOK_URL"
+      #- name: Redeploy
+        #if: github.event_name == 'push'
+        #run: curl "$HOOK_URL"
