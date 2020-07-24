@@ -12,6 +12,7 @@ on:
 
   # Run tests for any PRs.
   pull_request:
+    branches: [ master ]
 
 env:
   IMAGE_NAME: aVolpe.github.io
@@ -20,9 +21,8 @@ jobs:
 
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
-  push:
+  build-and-push:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
 
     steps:
       - uses: actions/checkout@v2
@@ -31,9 +31,11 @@ jobs:
         run: docker build . --file Dockerfile --tag blog
 
       - name: Log into registry
+        if: github.event_name == 'push'
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
-      - name: Push image
+      - name: Tag image
+        if: github.event_name == 'push'
         run: |
           IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
           
@@ -48,4 +50,11 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
           docker tag blog $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:$VERSION
+
+      - name: Push image
+        if: github.event_name == 'push'
+        run: docker push $IMAGE_ID:$VERSION
+
+      - name: Redeploy
+        if: github.event_name == 'push'
+        run: curl "$HOOK_URL"
