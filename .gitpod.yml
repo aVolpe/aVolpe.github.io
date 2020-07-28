@@ -1,0 +1,6 @@
+tasks:
+  - init: bundle install
+
+vscode:
+  extensions:
+    - streetsidesoftware.code-spell-checker@1.9.0:zfrDgZmxZRojZW7Uky3Fww==
