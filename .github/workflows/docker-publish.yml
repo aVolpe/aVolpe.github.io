@@ -52,6 +52,9 @@ jobs:
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
 
+          curl "${{ secrets.HOOK_URL }}"
+          echo "Succeed"
+
       #- name: Redeploy
         #if: github.event_name == 'push'
         #run: curl "$HOOK_URL"
