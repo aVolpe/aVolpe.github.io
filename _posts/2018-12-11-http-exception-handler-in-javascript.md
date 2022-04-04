@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "WIP: Alternatives for handling uncaugh exception in javascript api clients"
+title: "Alternatives for handling uncaugh exception in javascript api clients"
 description: "This post explores various options for handling uncaugh exceptions with javascript frameworks"
 category: "develop"
 tags: ["javascript", "http"]
