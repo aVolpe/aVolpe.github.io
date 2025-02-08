@@ -8,3 +8,8 @@
 
 > This project forked and has been modified from [My Stack Problems](https://github.com/agusmakmun/agusmakmun.github.io),
 > and the search posts using [Super Search](https://github.com/chinchang/super-search)
+
+
+### Notas
+
+* Copy themes from https://numist.github.io/highlight-css/ and put it in ./static/css/syntax.css
