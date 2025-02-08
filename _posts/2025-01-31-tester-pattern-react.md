@@ -91,6 +91,10 @@ class HelloWorldPageAsserter {
 }
 ```
 
+Links:
+
+* Component: [HelloWorld.tsx](https://github.com/aVolpe/vitest-tester-pattern-playground/blob/main/src/HelloWorld.tsx)
+* Test: [HelloWorld.test.tsx](https://github.com/aVolpe/vitest-tester-pattern-playground/blob/main/src/HelloWorld.test.tsx)
 
 ## A note about async/await
 
@@ -393,3 +397,11 @@ And modify the tests:
         await asserter.callbackWasNotCalled();
     });
 ```
+
+
+Links:
+
+* Component: [Step2Form.tsx](https://github.com/aVolpe/vitest-tester-pattern-playground/blob/main/src/Step2Form.tsx)
+* Test: [Step2Form.test.tsx](https://github.com/aVolpe/vitest-tester-pattern-playground/blob/main/src/Step2Form.test.tsx)
+
+All the source code for the examples is in the [vitest pattern playground github repo](https://github.com/aVolpe/vitest-tester-pattern-playground/tree/main)
