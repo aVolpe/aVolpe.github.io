@@ -1,46 +1,17 @@
-# DOCKER-VERSION 1.6.0, build 4749651
+# Step 1: Build Jekyll Site
+FROM ruby:3.3.4-bullseye AS builder
 
-# habd.as Dockerfile
-# Runs Jekyll under Nginx with Passenger
+WORKDIR /app
 
-FROM phusion/passenger-ruby27:1.0.10
-MAINTAINER Arturo Volpe "arturovolpe@gmail.com"
-
-# Set environment variables
-ENV HOME /home/deployer
-
-# Set default locale for the environment
-ENV LC_ALL C.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
-
-# Use baseimage-docker's init process
-CMD ["/sbin/my_init"]
-
-# Expose Nginx HTTP service
-EXPOSE 80
-
-# Start Nginx / Passenger
-RUN rm -f /etc/service/nginx/down
-
-# Remove the default site
-RUN rm /etc/nginx/sites-enabled/default
-
-# Add the Nginx site and config
-COPY nginx.conf /etc/nginx/sites-enabled/webapp.conf
-
-# Install bundle of gems
-WORKDIR /tmp
-COPY Gemfile /tmp/
-COPY Gemfile.lock /tmp/
+COPY Gemfile /app/
+COPY Gemfile.lock /app/
 RUN bundle install
-#RUN gem install jekyll --no-rdoc --no-ri -v 4.1.1
 
-# Add the Passenger app
-COPY . /home/app/webapp
-RUN chown -R app:app /home/app/webapp
+COPY . .
 
-# Build the app with Jekyll
-WORKDIR /home/app/webapp
 RUN bundle exec jekyll build
 
+# Step 2: Serve with Nginx
+FROM nginx:alpine
+
+COPY --from=builder /app/_site /usr/share/nginx/html
