@@ -1,7 +1,7 @@
 body {
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  background: url("/static/img/subtle_dots.png");
-  line-height: 1.5em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  /* background: url("/static/img/subtle_dots.png"); */
+  line-height: 1.5;
   font-weight: 300;
   font-size: 16px;
   color: #666;
@@ -57,16 +57,13 @@ a:hover {
 
 /* Content */
 div.content pre {
-  background: #333333;
-  padding: 10px;
-  color: #FFF;
+  /* background: #333333; */
+  /* padding: 10px; */
+  /* color: #FFF;
   overflow-x: auto;
   font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-size: 12px;
-  border: none;
-}
-div.content .highlight {
-	background: #333333;
+  border: none; */
 }
 footer {
   border-top: 1px solid #F7F1F1;
@@ -186,4 +183,14 @@ div.col-sm-3 img.profile-avatar {
     margin-right: .5em;
   }
 
+}
+
+.highlighter-rouge .highlight {
+  border-radius: 8px;
+}
+
+.highlight>pre {
+  border-radius: 8px;
+  background-color: #f6f8fa;
+  border-color: #0000001f;
 }
