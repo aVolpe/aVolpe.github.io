@@ -1,0 +1,11 @@
+# Step 1: Build Jekyll Site
+FROM ruby:3.3.4-bullseye AS builder
+
+WORKDIR /app
+
+COPY Gemfile /app/
+COPY Gemfile.lock /app/
+RUN bundle install
+
+CMD [ "bundle",  "exec",  "jekyll",  "serve", "-w", "--host", "0.0.0.0", "-P", "4000"  ]
+
