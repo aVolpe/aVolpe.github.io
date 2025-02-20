@@ -1,27 +1,30 @@
 ---
 layout: post
-title: "[WIP] The tester pattern in react"
-description: "Explorint the testern pattern in a react project"
-category: "develop"
-tags: ["javascript", "typescript", "react", "vite", "react-testing-library"]
+title: "[WIP] Applying the Tester Pattern in React Testing"
+description: "Exploring the testern pattern in a React project"
+category: develop
+tags: ["JavaScript", "TypeScript", "react", "vite", "react-testing-library"]
 ---
 
-The [tester pattern](https://www.testerpattern.nl/pattern) is a good way to structure your tests to improve the readability and to make very easy to write and expand the test suite.
+The [tester pattern](https://www.testerpattern.nl/pattern) is a great way to
+structure your tests to improve readability and making it easier to write
+and expand the test suite.
 
-In the original webpage, the author explain the concepts in java, in this blog we will try the pattern in JavaScript, more specifically in a react SPA.
+In the original webpage, the author explains the concepts in Java, in this blog
+we will apply the pattern in JavaScript, specifically in a React SPA.
 
 The libraries that we will be using are:
 
 - vitest as the runner and mock library
-- react testing library to interact with react components.
+- React testing library to interact with React components.
 
-Let's explore the pattern in various examples with an increase level of
-complexity:
+Let's explore the pattern with examples of increasing complexity:
 
 
 - a simple component that draws a static message
 - a form with various inputs.
-- the same component, but the message is a quote from a web service. Using MSW for the test.
+- the same component, but the message is a quote from a web service. Using MSW
+  for the test.
 
 
 # first scenario: simple component
@@ -54,11 +57,12 @@ describe('simpleComponent', () => {
 });
 ```
 
-For this simple case the boilerplate of adding a tester and asserter helper
-classes may be too much, but an interesting side-effect is that the test doesn't
-have any component-related selector.
+For this simple case, adding tester and asserter helper classes may seem like
+overkill. However, an interesting side effect is that the test does not rely on
+any component-specific selectors
 
-The test is in 'plain' english (with the limitation of the language) and the helper classes can be user for multiple tests.
+The test is in 'plain' English (with the limitation of the language) and the
+helper classes can be user for multiple tests.
 
 The tester and asserted used:
 
@@ -113,8 +117,7 @@ new BookTester()
 
 To map this to a `react-testing-library` test, we need to use async/await,
 normally the asserter methods are required to be async in order to use the
-[findBy
-methods](https://testing-library.com/docs/dom-testing-library/api-async#findby-queries),
+[findBy methods](https://testing-library.com/docs/dom-testing-library/api-async#findby-queries),
 so we need to migrate to:
 
 ```typescript
@@ -130,9 +133,8 @@ await asserter.thenHasInCover("Author: Arturo Volpe");
 await asserter.thenHasInChapters(2);
 ```
 
-Maybe if someday the [pipeline
-operator](https://github.com/tc39/proposal-pipeline-operator?tab=readme-ov-file)
-added to the language, this will be more concise:
+If the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator?tab=readme-ov-file)
+added to the language, this syntax could become more concise:
 
 ```typescript
 new BookComponentTester()
@@ -145,11 +147,16 @@ new BookComponentTester()
    |> await %.thenHasInChapters(2)
 ```
 
+
+
+
+
+
 # Second scenario: A simple form
 
-The tester pattern realy shines when we need to test different use cases that
-has a similar setup and need specific assertions, in this case we will have a
-form to edit some personal information (name and lastname).
+The Tester Pattern really shines when testing multiple use cases that share a
+similar setup but require specific assertions. In this case, we will test a form
+for editing personal information (first name and last name).
 
 For the form we will use
 [react-hook-form](https://react-hook-form.com/get-started), and the [getting
@@ -159,7 +166,7 @@ modifications.
 In this form, we have two inputs:
 
 * name: the first name, required, max length 10
-* lastname: the last name, not required, max length 20
+* last name: the last name, not required, max length 20
 
 ```tsx
 type Inputs = {
@@ -223,8 +230,8 @@ instructions, and the tester execute the required steps.
 
 Reading this test we don't know anything about the internals of the component,
 we only know that we are asking the tester to submit the form with a given name
-and lastname. **The internals of the component and the complexity of the
-emulation of user actions is hidden to the test, making it easy to read and 
+and last name. **The internals of the component and the complexity of the
+emulation of user actions is hidden to the test, making it easy to read and
 follow**.
 
 The tester for this form is slightly more complex:
@@ -271,11 +278,83 @@ class Step2FormPageAsserter {
 }
 ```
 
-We can see that there are some 'component kwnoledge' in the Tester, the tester
-knows how to find the desired inputs, and that logic, specially when we are
-testing front end components is very tricky, sometimes we need to wait it to
-render, sometimes we need to use a complex css selector, but all of that is
-hidden and is a implementation detail of the Tester.
+The Tester encapsulates some 'component knowledge'—it knows how to find the
+required inputs. This logic can be complex, especially when testing frontend
+components. Sometimes, we need to wait for rendering; other times, we must use a
+complex CSS selector. However, all of this is hidden as an implementation detail
+within the Tester.
+
+## A note about the Tester for React Components
+
+We can use the [Page Object Model](https://playwright.dev/docs/pom) popularized
+by tools like selenium or playwright to create the tester. This is more similar
+to what a user would do when using the component.
+
+> In the original tester pattern, we are testing a action, like calling an
+> endpoint or a method, but now we are testing the user actions, so it's better
+> to test a sequence of actions, in this example the filling of a form.
+
+
+Using this pattern we can have another approach, instead of giving the Tester all
+the information that it need to perform the action, we instruct it like a robot:
+
+```tsx
+describe('step2Form', () => {
+    it('renderValidValuesRobot', async () => {
+
+        const tester = new Step2FormPageRobotTester();
+
+        await tester.givenComponentRendered();
+        await tester.givenFirstname('Arturo');
+        await tester.givenLastname('Volpe');
+        
+        let asserter = await tester.whenDoSubmit();
+        await asserter.hasAllFieldsValid();
+    });
+    
+    it('firstName.inmediateFeedback', async () => {
+
+        const tester = new Step2FormPageRobotTester();
+
+        await tester.givenComponentRendered();
+        let asserter = await tester.whenFirstnameFilled('');
+        
+        await asserter.hasMessage('Firstname is required');
+    });
+});
+
+class Step2FormPageRobotTester {
+
+    component!: RenderResult;
+
+    givenComponentRendered() { 
+      this.component = render(<Step2Form />); 
+    }
+    givenFirstname(targetName: string) { 
+      return this.fillInput("firstname-input", targetName); 
+    }
+    givenLastname(targetName: string) { 
+      return this.fillInput("lastname-input", targetName); 
+    }
+
+    async whenDoSubmit() {
+        const bttn = await this.component.findByText('Save');
+        fireEvent.click(bttn);
+        return new Step2FormPageAsserter(this.component);
+    }
+
+    async fillInput(targetTestId: string, toInsert: string) {
+        const input = await this.component.findByTestId(targetTestId);
+        fireEvent.change(input, {target: {value: toInsert}})
+        return this;
+    }
+    
+    async whenFirstnameFilled(targetName: string) { 
+      await this.fillInput("firstname-input", targetName); 
+      return new Step2FormPageAsserter(this.component);
+    }
+}
+```
 
 ## Adding more tests cases
 
@@ -347,7 +426,7 @@ class Step2FormPageTester {
     }
 ```
 
-> Here we can have two differente asserts, one to check for contents in the 
+> Here we can have two different asserts, one to check for contents in the 
 page, and another one to assert the invocations to the function. For simplicity,
 we will only use one.
 
